@@ -19,7 +19,8 @@ export default function Home(): JSX.Element {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:9000/time-data");
+        // const response = await fetch("http://localhost:9000/time-data");
+        const response = await fetch("https://sanitizer-backend.onrender.com/time-data");
         const responseData = await response.json();
         const data: TimeData[] = responseData.data.map((item: TimeData) => ({
           ...item,

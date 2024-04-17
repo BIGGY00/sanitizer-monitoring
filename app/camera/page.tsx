@@ -129,7 +129,8 @@ export default function CombinedDetection() {
   const sendTimerToBackend = async (timerValue: number) => {
     try {
       // Make an HTTP POST request to the backend endpoint
-      await axios.post('http://localhost:9000/time-data', { seconds: timerValue });
+      // await axios.post('http://localhost:9000/time-data', { seconds: timerValue });
+      await axios.post('https://sanitizer-backend.onrender.com/time-data', { seconds: timerValue });
       console.log("Timer value sent to the backend:", timerValue);
     } catch (error) {
       console.error("Error sending timer value to backend:", error);
